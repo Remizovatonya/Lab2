@@ -301,7 +301,7 @@ TEST(TVector, can_subtract_vectors_with_not_equal_size)
 TEST(TVector, can_multiply_vectors_with_equal_size)
 {
     Vector<int> V(5), V1(5);
-
+   
     ASSERT_NO_THROW(V * V1);
 }
 
@@ -312,16 +312,25 @@ TEST(TVector, can_multiply_vectors_with_not_equal_size)
     ASSERT_NO_THROW(V * V1);
 }
 
-TEST(TVector, can_divide_vectors_with_equal_size)
+TEST(TVector, can_add_scalar)
 {
-    Vector<int> V(5), V1(5);
-
-    ASSERT_NO_THROW(V / V1);
+    Vector<int> V(5);
+    int k = 3;
+    ASSERT_NO_THROW(V + k);
 }
 
-TEST(TVector, can_divide_vectors_with_not_equal_size)
+TEST(TVector, can_subtract_scalar)
 {
-    Vector<int> V(5), V1(10);
-
-    ASSERT_NO_THROW(V * V1);
+    Vector<int> V(5);
+    int k = 4;
+    ASSERT_NO_THROW(V - k);
 }
+
+TEST(TVector, can_multiply_scalar)
+{
+    Vector<double> V(5);
+    double k = -1.5;
+    ASSERT_NO_THROW(V * k);
+}
+
+

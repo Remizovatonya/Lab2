@@ -22,10 +22,12 @@ public:
     Vector(const Vector<T>& A);
     virtual ~Vector();
 
-    Vector<T> operator +(const Vector<T>& A);
-    Vector<T> operator -(Vector<T>& A);
-    Vector<T> operator *(Vector<T>& A);
-    Vector<T> operator /(Vector<T>& A);
+    Vector<T> operator +(const Vector<T>& A); //скал€рное сложение
+    Vector<T> operator -(const Vector<T>& A); //скал€рное вычитание
+    Vector<T> operator *(const Vector<T>& A); //скал€рное умножение
+    Vector<T> operator +(const T& tmp); //прибавить скал€р
+    Vector<T> operator -(const T& tmp); //вычесть на скал€р
+    Vector<T> operator *(const T& tmp); //умножение на скал€р
     Vector<T>& operator =(const Vector<T>& A);
     T& operator[] (const int index);
 
@@ -93,7 +95,7 @@ inline Vector<T> Vector<T>::operator +(const Vector<T>& A)
 }
 
 template <class T>
-inline Vector<T> Vector<T>::operator -(Vector<T>& A)
+inline Vector<T> Vector<T>::operator -(const Vector<T>& A)
 {
     Vector<T> res;
     res.Length = MIN(Length, A.Length);
@@ -106,7 +108,7 @@ inline Vector<T> Vector<T>::operator -(Vector<T>& A)
 }
 
 template <class T>
-inline Vector<T> Vector<T>::operator *(Vector<T>& A)
+inline Vector<T> Vector<T>::operator *(const Vector<T>& A)
 {
     Vector<T> res;
     res.Length = MIN(Length, A.Length);
@@ -119,17 +121,33 @@ inline Vector<T> Vector<T>::operator *(Vector<T>& A)
 }
 
 template <class T>
-inline Vector<T> Vector<T>::operator /(Vector<T>& A)
-
+inline Vector<T> Vector<T>::operator +(const T& tmp)
 {
-    Vector<T> res;
-    res.Length = MIN(Length, A.Length);
-    res.x = new T[res.Length];
-    for (int i = 0; i < res.Length; i++)
+    for (int i = 0; i < Length; i++)
     {
-        res.x[i] = x[i] / A.x[i];
+        x[i] = x[i] + tmp;
     }
-    return res;
+    return *this;
+}
+
+template <class T>
+inline Vector<T> Vector<T>::operator -(const T& tmp)
+{
+    for (int i = 0; i < Length; i++)
+    {
+        x[i] = x[i] - tmp;
+    }
+    return *this;
+}
+
+template <class T>
+inline Vector<T> Vector<T>::operator *(const T& tmp)
+{
+    for (int i = 0; i < Length; i++)
+    {
+        x[i] = x[i] * tmp;
+    }
+    return *this;
 }
 
 template <class T>

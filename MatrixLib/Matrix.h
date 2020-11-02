@@ -70,23 +70,13 @@ inline TMatrix<T>::TMatrix(const Vector<Vector<T>>& A) : Vector<Vector<T>>(A)
 template<class T>
 bool TMatrix<T>::operator==(const TMatrix& A) const
 {
-    if (Length != A.Length || StartIndex != A.StartIndex)
-        return false;
-    for (int i = 0; i < Length; i++)
-        if (x[i] != A.x[i])
-            return false;
-    return true;
+    return Vector<Vector<T>>::operator ==(A);
 }
 
 template<class T>
 bool TMatrix<T>::operator!=(const TMatrix& A) const
 {
-    if (Length != A.Length || StartIndex != A.StartIndex)
-        return true;
-    for (int i = 0; i < Length; i++)
-        if (x[i] != A.x[i])
-            return true;
-    return false;
+    return Vector<Vector<T>>::operator !=(A);
 }
 
 template<class T>
