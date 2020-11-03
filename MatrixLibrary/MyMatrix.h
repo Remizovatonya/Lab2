@@ -54,7 +54,7 @@ inline TMatrix<T>::TMatrix(int _size) : Vector<Vector<T>>(_size)
     if (_size < 0 || _size > MAX_MATRIX_SIZE)
         throw exception();
     for (int i = 0; i < _size; i++)
-        x[i] = Vector<T>(_size - i, i);
+        this->x[i] = Vector<T>(_size - i, i);
 }
 
 template <class T>
@@ -127,7 +127,7 @@ template<class T>
 TMatrix<T>& TMatrix<T>::operator +=(const TMatrix<T>& A)
 {
     for (int i = 0; i < this->Length; i++)
-        x[i] += A.x[i];
+        this->x[i] += A.x[i];
     return *this;
 }
 
@@ -135,6 +135,6 @@ template<class T>
 TMatrix<T>& TMatrix<T>::operator -=(const TMatrix<T>& A)
 {
     for (int i = 0; i < this->Length; i++)
-        x[i] -= A.x[i];
+        this->x[i] -= A.x[i];
     return *this;
 }
