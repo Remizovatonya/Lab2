@@ -4,28 +4,28 @@
 
 #include "MyVector.h"
 
-int MAX_MATRIX_SIZE = 1000;
+extern int MAX_MATRIX_SIZE = 1000;
 
 template <class T>
 class TMatrix : public Vector<Vector<T>>
 {
 public:
-    TMatrix(int _size = 0); //инициализатор
-    TMatrix(const TMatrix<T>& A); //копирование
-    TMatrix(const Vector<Vector<T>>& A); // преобразование типа
+    TMatrix(int _size = 0); //РёРЅРёС†РёР°Р»РёР·Р°С‚РѕСЂ
+    TMatrix(const TMatrix<T>& A); //РєРѕРїРёСЂРѕРІР°РЅРёРµ
+    TMatrix(const Vector<Vector<T>>& A); // РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ С‚РёРїР°
 
-    bool operator==(const TMatrix& A) const;      // сравнение
-    bool operator!=(const TMatrix& A) const;      // сравнение
+    bool operator==(const TMatrix& A) const;      // СЃСЂР°РІРЅРµРЅРёРµ
+    bool operator!=(const TMatrix& A) const;      // СЃСЂР°РІРЅРµРЅРёРµ
 
-    TMatrix<T>& operator= (const TMatrix<T>& A);     // присваивание
-    TMatrix<T> operator+ (const TMatrix<T>& A);      // сложение
-    TMatrix<T> operator- (const TMatrix& A);      // вычитание
-    TMatrix<T> operator* (const TMatrix<T>& A);      //умножение
-    TMatrix<T> operator/ (const TMatrix<T>& A);      //деление
+    TMatrix<T>& operator= (const TMatrix<T>& A);     // РїСЂРёСЃРІР°РёРІР°РЅРёРµ
+    TMatrix<T> operator+ (const TMatrix<T>& A);      // СЃР»РѕР¶РµРЅРёРµ
+    TMatrix<T> operator- (const TMatrix& A);      // РІС‹С‡РёС‚Р°РЅРёРµ
+    TMatrix<T> operator* (const TMatrix<T>& A);      //СѓРјРЅРѕР¶РµРЅРёРµ
+    TMatrix<T> operator/ (const TMatrix<T>& A);      //РґРµР»РµРЅРёРµ
     TMatrix<T>& operator +=(const TMatrix<T>& A);
     TMatrix<T>& operator -=(const TMatrix<T>& A);
 
-    //потоки ввода и вывода
+    //РїРѕС‚РѕРєРё РІРІРѕРґР° Рё РІС‹РІРѕРґР°
     friend istream& operator>>(istream& in, TMatrix<T>& A)
     {
         for (int i = 0; i < A.GetLength(); i++)
@@ -42,7 +42,7 @@ public:
             for (int j = res[i].GetStartIndex(); j < res.GetLength(); j++)
                 out << res[i][j] << ' ';
             out << endl;
-        }   
+        }
         return out;
     }
 
@@ -82,7 +82,7 @@ bool TMatrix<T>::operator!=(const TMatrix& A) const
 template<class T>
 inline TMatrix<T>& TMatrix<T>::operator=(const TMatrix<T>& A)
 {
-    if (this == &A) 
+    if (this == &A)
         return *this;
     Vector<Vector<T>>::operator =(A);
 }
@@ -138,5 +138,3 @@ TMatrix<T>& TMatrix<T>::operator -=(const TMatrix<T>& A)
         x[i] -= A.x[i];
     return *this;
 }
-
-

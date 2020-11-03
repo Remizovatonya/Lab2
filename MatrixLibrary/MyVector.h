@@ -5,7 +5,7 @@
 #include <iostream>
 #include <algorithm>
 
-int MAX_VECTOR_SIZE = 100000000;
+extern int MAX_VECTOR_SIZE = 100000000;
 
 using namespace std;
 
@@ -22,12 +22,12 @@ public:
     Vector(const Vector<T>& A);
     virtual ~Vector();
 
-    Vector<T> operator +(const Vector<T>& A); //скалярное сложение
-    Vector<T> operator -(const Vector<T>& A); //скалярное вычитание
-    Vector<T> operator *(const Vector<T>& A); //скалярное умножение
-    Vector<T> operator +(const T& tmp); //прибавить скаляр
-    Vector<T> operator -(const T& tmp); //вычесть на скаляр
-    Vector<T> operator *(const T& tmp); //умножение на скаляр
+    Vector<T> operator +(const Vector<T>& A); //СЃРєР°Р»СЏСЂРЅРѕРµ СЃР»РѕР¶РµРЅРёРµ
+    Vector<T> operator -(const Vector<T>& A); //СЃРєР°Р»СЏСЂРЅРѕРµ РІС‹С‡РёС‚Р°РЅРёРµ
+    Vector<T> operator *(const Vector<T>& A); //СЃРєР°Р»СЏСЂРЅРѕРµ СѓРјРЅРѕР¶РµРЅРёРµ
+    Vector<T> operator +(const T& tmp); //РїСЂРёР±Р°РІРёС‚СЊ СЃРєР°Р»СЏСЂ
+    Vector<T> operator -(const T& tmp); //РІС‹С‡РµСЃС‚СЊ РЅР° СЃРєР°Р»СЏСЂ
+    Vector<T> operator *(const T& tmp); //СѓРјРЅРѕР¶РµРЅРёРµ РЅР° СЃРєР°Р»СЏСЂ
     Vector<T>& operator =(const Vector<T>& A);
     T& operator[] (const int index);
 
@@ -221,7 +221,7 @@ inline Vector<T>& Vector<T>::operator -=(Vector<T>& A)
 
 template <class T1>
 ostream& operator<< (ostream& ostr, const Vector<T1>& A) {
-    for (int i = 0; i < A.Length; i++) 
+    for (int i = 0; i < A.Length; i++)
     {
         ostr << A.x[i] << endl;
     }
@@ -230,7 +230,7 @@ ostream& operator<< (ostream& ostr, const Vector<T1>& A) {
 
 template <class T1>
 istream& operator >> (istream& istr, Vector<T1>& A) {
-    for (int i = 0; i < A.Length; i++) 
+    for (int i = 0; i < A.Length; i++)
     {
         istr >> A.x[i];
     }

@@ -1,5 +1,5 @@
 
-#include "Matrix.h"
+#include "MyMatrix.h"
 #include <gtest.h>
 
 
@@ -301,7 +301,7 @@ TEST(TVector, can_subtract_vectors_with_not_equal_size)
 TEST(TVector, can_multiply_vectors_with_equal_size)
 {
     Vector<int> V(5), V1(5);
-   
+
     ASSERT_NO_THROW(V * V1);
 }
 
@@ -332,5 +332,3 @@ TEST(TVector, can_multiply_scalar)
     double k = -1.5;
     ASSERT_NO_THROW(V * k);
 }
-
-
