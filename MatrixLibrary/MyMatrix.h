@@ -84,7 +84,7 @@ inline TMatrix<T>& TMatrix<T>::operator=(const TMatrix<T>& A)
 {
     if (this == &A)
         return *this;
-    Vector<Vector<T> >::operator =(A);
+    else Vector<Vector<T> >::operator =(A);
 }
 
 template<class T>
