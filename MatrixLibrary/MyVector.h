@@ -66,7 +66,7 @@ inline Vector<T>::Vector(const Vector<T>& A)
     StartIndex = A.StartIndex;
     x = new T[Length];
     for (int i = 0; i < Length; i++)
-        this->x[i] = A.x[i];
+        x[i] = A.x[i];
 }
 
 template <class T>
@@ -170,9 +170,9 @@ inline Vector<T>& Vector<T>::operator =(const Vector<T>& A)
 template <class T>
 inline T& Vector<T>::operator[] (const int index)
 {
-    if ((index - StartIndex) >= 0 && (index - StartIndex) < Length)
-        return x[index - StartIndex];
-    else throw exception();
+    if ((index - StartIndex) < 0 || (index - StartIndex) >= Length)
+        throw exception();
+    return x[index - StartIndex];  
 }
 
 template <class T>

@@ -60,7 +60,7 @@ TEST(TMatrix, can_set_and_get_element)
 TEST(TMatrix, throws_when_set_element_with_negative_index)
 {
     TMatrix<int> A(5);
-    ASSERT_ANY_THROW(A[0][-1]);
+    ASSERT_ANY_THROW(A[-1][0]);
 }
 
 TEST(TMatrix, throws_when_set_element_with_too_large_index)

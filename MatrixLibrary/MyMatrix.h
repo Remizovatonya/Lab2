@@ -94,7 +94,7 @@ inline TMatrix<T> TMatrix<T>::operator+(const TMatrix<T>& A)
         throw exception();
     TMatrix<T> tmp(*this);
     for (int i = 0; i < this->Length; i++)
-        tmp.x[i] = tmp.x[i] + A.x[i];
+        tmp.x[i] += A.x[i];
     return tmp;
 }
 
@@ -105,7 +105,7 @@ inline TMatrix<T> TMatrix<T>::operator-(const TMatrix<T>& A)
         throw exception();
     TMatrix<T> tmp(*this);
     for (int i = 0; i < this->Length; i++)
-        tmp.x[i] = tmp.x[i] - A.x[i];
+        tmp.x[i] -= A.x[i];
     return tmp;
 }
 
