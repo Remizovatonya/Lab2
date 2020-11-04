@@ -4,15 +4,15 @@
 
 #include "MyVector.h"
 
-extern int MAX_MATRIX_SIZE = 1000;
+int MAX_MATRIX_SIZE = 1000;
 
 template <class T>
-class TMatrix : public Vector<Vector<T>>
+class TMatrix : public Vector<Vector<T> >
 {
 public:
     TMatrix(int _size = 0); //инициализатор
     TMatrix(const TMatrix<T>& A); //копирование
-    TMatrix(const Vector<Vector<T>>& A); // преобразование типа
+    TMatrix(const Vector<Vector<T> >& A); // преобразование типа
 
     bool operator==(const TMatrix& A) const;      // сравнение
     bool operator!=(const TMatrix& A) const;      // сравнение
@@ -49,7 +49,7 @@ public:
 };
 
 template <class T>
-inline TMatrix<T>::TMatrix(int _size) : Vector<Vector<T>>(_size)
+inline TMatrix<T>::TMatrix(int _size) : Vector<Vector<T> >(_size)
 {
     if (_size < 0 || _size > MAX_MATRIX_SIZE)
         throw exception();
@@ -58,25 +58,25 @@ inline TMatrix<T>::TMatrix(int _size) : Vector<Vector<T>>(_size)
 }
 
 template <class T>
-inline TMatrix<T>::TMatrix(const TMatrix<T>& A) : Vector<Vector<T>>(A)
+inline TMatrix<T>::TMatrix(const TMatrix<T>& A) : Vector<Vector<T> >(A)
 {
 }
 
 template<class T>
-inline TMatrix<T>::TMatrix(const Vector<Vector<T>>& A) : Vector<Vector<T>>(A)
+inline TMatrix<T>::TMatrix(const Vector<Vector<T> >& A) : Vector<Vector<T> >(A)
 {
 }
 
 template<class T>
 bool TMatrix<T>::operator==(const TMatrix& A) const
 {
-    return Vector<Vector<T>>::operator ==(A);
+    return Vector<Vector<T> >::operator ==(A);
 }
 
 template<class T>
 bool TMatrix<T>::operator!=(const TMatrix& A) const
 {
-    return Vector<Vector<T>>::operator !=(A);
+    return Vector<Vector<T> >::operator !=(A);
 }
 
 template<class T>
@@ -84,7 +84,7 @@ inline TMatrix<T>& TMatrix<T>::operator=(const TMatrix<T>& A)
 {
     if (this == &A)
         return *this;
-    Vector<Vector<T>>::operator =(A);
+    Vector<Vector<T> >::operator =(A);
 }
 
 template<class T>

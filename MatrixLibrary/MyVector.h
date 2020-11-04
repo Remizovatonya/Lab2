@@ -5,7 +5,7 @@
 #include <iostream>
 #include <algorithm>
 
-extern int MAX_VECTOR_SIZE = 100000000;
+int MAX_VECTOR_SIZE = 100000000;
 
 using namespace std;
 

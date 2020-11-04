@@ -4,7 +4,7 @@
 
 int main()
 {
-	Vector<Vector<int>> V(5);
+	Vector<Vector<int> > V(5);
 	TMatrix <int> A(3), M(A), C;
 	C = A + M;
 	bool k = M == A;
