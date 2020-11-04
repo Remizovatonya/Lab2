@@ -90,7 +90,7 @@ inline TMatrix<T>& TMatrix<T>::operator=(const TMatrix<T>& A)
 template<class T>
 inline TMatrix<T> TMatrix<T>::operator+(const TMatrix<T>& A)
 {
-    if (Length != A.Length)
+    if (this->Length != A.Length)
         throw exception();
     TMatrix<T> tmp(*this);
     for (int i = 0; i < this->Length; i++)
@@ -101,7 +101,7 @@ inline TMatrix<T> TMatrix<T>::operator+(const TMatrix<T>& A)
 template<class T>
 inline TMatrix<T> TMatrix<T>::operator-(const TMatrix<T>& A)
 {
-    if (Length != A.Length)
+    if (this->Length != A.Length)
         throw exception();
     TMatrix<T> tmp(*this);
     for (int i = 0; i < this->Length; i++)
