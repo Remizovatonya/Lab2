@@ -90,7 +90,7 @@ TEST(TMatrix, can_assign_matrices_of_different_size)
 
 TEST(TMatrix, compare_equal_matrices_return_true)
 {
-    TMatrix<int> A(5), B(5);
+    TMatrix<int> A(5), B(A);
     ASSERT_EQ(A == B, true); 
 }
 
@@ -243,7 +243,7 @@ TEST(TVector, can_assign_vectors_of_different_size)
 
 TEST(TVector, compare_equal_vectors_return_true)
 {
-    Vector<int> V(5), V1(5);
+    Vector<int> V(5), V1(V);
 
     EXPECT_EQ(V == V1, true);
 }

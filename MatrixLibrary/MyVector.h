@@ -66,7 +66,7 @@ inline Vector<T>::Vector(const Vector<T>& A)
     StartIndex = A.StartIndex;
     x = new T[Length];
     for (int i = 0; i < Length; i++)
-        x[i] = A.x[i];
+        this->x[i] = A.x[i];
 }
 
 template <class T>
@@ -163,7 +163,7 @@ inline Vector<T>& Vector<T>::operator =(const Vector<T>& A)
     Length = A.Length;
     StartIndex = A.StartIndex;
     for (int i = 0; i < Length; i++)
-        x[i] = A.x[i];
+        this->x[i] = A.x[i];
     return *this;
 }
 
