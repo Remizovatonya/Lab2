@@ -163,7 +163,7 @@ inline Vector<T>& Vector<T>::operator =(const Vector<T>& A)
     Length = A.Length;
     StartIndex = A.StartIndex;
     for (int i = 0; i < Length; i++)
-        this->x[i] = A.x[i];
+        x[i] = A.x[i];
     return *this;
 }
 
