@@ -82,9 +82,9 @@ bool TMatrix<T>::operator!=(const TMatrix& A) const
 template<class T>
 inline TMatrix<T>& TMatrix<T>::operator=(const TMatrix<T>& A)
 {
-    if (this == &A)
-        return *this;
-    else Vector<Vector<T> >::operator =(A);
+    if (this != &A)
+        Vector<Vector<T> >::operator =(A);
+    return *this;
 }
 
 template<class T>
