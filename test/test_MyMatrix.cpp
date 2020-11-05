@@ -168,22 +168,6 @@ TEST(TVector, can_create_copied_vector)
     ASSERT_NO_THROW(Vector<int> V1(V));
 }
 
-TEST(TVector, copied_vector_is_equal_to_source_one)
-{
-    Vector<int> V(10), V1(V);
-
-    EXPECT_EQ(V, V1);
-
-}
-
-TEST(TVector, copied_vector_has_its_own_memory)
-{
-    Vector<int> V(5), V1(V);
-    V1[0] = 10;
-
-    EXPECT_NE(V[0], V1[0]);
-}
-
 TEST(TVector, can_get_length)
 {
     Vector<int> V(4);
